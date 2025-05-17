@@ -1,3 +1,12 @@
 spring:
   application:
     name: springboot-reactive-api
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/spring_reactive
+    username: springreactive
+    password: springreactive
+  flyway:
+    url: jdbc:postgresql://localhost:5432/spring_reactive
+    user: springreactive
+    password: springreactive
+
