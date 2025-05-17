@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
+
 @Service
 @RequiredArgsConstructor
 public class StudentService {
@@ -16,7 +18,8 @@ public class StudentService {
     }
 
     public Flux<Student> findAll() {
-        return repository.findAll();
+        return repository.findAll()
+                .delayElements(Duration.ofSeconds(1));
     }
 
     //Flux means a list of objects and Mono means one object
